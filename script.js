@@ -1,6 +1,7 @@
 const revealElements = document.querySelectorAll('.reveal');
 const navToggle = document.querySelector('.nav-toggle');
 const siteNav = document.querySelector('.site-nav');
+const siteHeader = document.querySelector('.site-header');
 
 const showElement = (element) => element.classList.add('is-visible');
 
@@ -31,6 +32,13 @@ siteNav?.querySelectorAll('a').forEach((link) => {
     navToggle?.setAttribute('aria-expanded', 'false');
   });
 });
+
+const updateHeader = () => {
+  siteHeader?.classList.toggle('is-scrolled', window.scrollY > 12);
+};
+
+updateHeader();
+window.addEventListener('scroll', updateHeader, { passive: true });
 
 document.querySelectorAll('.faq-item button').forEach((button) => {
   button.addEventListener('click', () => {
