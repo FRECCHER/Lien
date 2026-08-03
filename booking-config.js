@@ -3,7 +3,7 @@
  * 宛先メールアドレスはこのファイルではなく、EmailJSのテンプレート設定で管理します。
  */
 window.LIEN_BOOKING_CONFIG = {
-  publicKey: "",
-  serviceId: "",
-  templateId: ""
+  publicKey: "TrK3pUmrpWKwYTv3g",
+  serviceId: "service_g5gmn7z",
+  templateId: "template_hmf8lfv"
 };
