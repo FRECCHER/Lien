@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lienのご予約リクエストページです。ご希望のメニューと日時をお送りください。" />
+    <meta name="theme-color" content="#fbf4f0" />
+    <title>ご予約 | Lien リアン</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="booking.css" />
+  </head>
+  <body>
+    <header class="booking-header">
+      <a class="booking-logo" href="index.html" aria-label="Lien トップページ">Lien<span>— リアン —</span></a>
+      <a class="back-link" href="index.html">サロンサイトへ戻る</a>
+    </header>
+
+    <main>
+      <section class="booking-hero" aria-labelledby="booking-title">
+        <p class="eyebrow">RESERVATION REQUEST</p>
+        <h1 id="booking-title">ご予約リクエスト</h1>
+        <p>ご希望のメニューと日時をお知らせください。<br />内容を確認後、24時間以内にメールでご連絡します。</p>
+        <div class="notice" role="note"><strong>ご注意</strong><span>送信時点では予約は確定しません。</span></div>
+      </section>
+
+      <section class="booking-panel" aria-label="予約フォーム">
+        <ol class="steps" aria-label="ご予約の流れ">
+          <li class="is-current"><span>1</span>入力</li>
+          <li><span>2</span>送信</li>
+          <li><span>3</span>LINEで確定</li>
+        </ol>
+
+        <form id="booking-form" novalidate>
+          <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="subject" value="【Lien予約】新しいご予約リクエスト" />
+
+          <fieldset>
+            <legend>お客様情報</legend>
+            <p class="fieldset-note">LINEでご連絡するため、お名前はLINEと同じ表記でご入力ください。</p>
+            <div class="field-grid">
+              <div class="field field-wide">
+                <label for="line-name">お名前（LINEのお名前）<b>必須</b></label>
+                <input id="line-name" name="line_name" type="text" autocomplete="name" required placeholder="例：山田 花子" />
+              </div>
+              <div class="field field-wide">
+                <label for="email">メールアドレス <b>必須</b></label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="例：sample@example.com" />
+                <small>予約受付・予約確定のご連絡に使用します。</small>
+              </div>
+              <div class="field field-wide">
+                <label for="phone">電話番号 <b>必須</b></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="例：090-1234-5678" />
+                <small>予約確認および当日の緊急連絡にのみ使用します。</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>ご希望メニュー</legend>
+            <div class="field">
+              <label for="menu">メニュー <b>必須</b></label>
+              <select id="menu" name="menu" required>
+                <option value="" selected disabled>選択してください</option>
+                <option value="まつ毛パーマ">まつ毛パーマ（¥5,500〜）</option>
+                <option value="美肌脱毛">美肌脱毛（¥5,500〜）</option>
+                <option value="アロマスチームスパ">アロマスチームスパ（¥3,850）</option>
+              </select>
+            </div>
+
+            <div id="hair-removal-fields" class="conditional-fields" hidden>
+              <p class="conditional-title">脱毛をご希望の方</p>
+              <div class="field">
+                <label for="hair-removal-area">ご希望の部位</label>
+                <input id="hair-removal-area" name="hair_removal_area" type="text" placeholder="例：全身、VIO、顔" />
+              </div>
+            </div>
+
+            <div id="lash-fields" class="conditional-fields" hidden>
+              <p class="conditional-title">まつ毛パーマをご希望の方</p>
+              <div class="field">
+                <label for="lash-request">ご希望・ご相談内容</label>
+                <input id="lash-request" name="lash_request" type="text" placeholder="例：初めてなので相談したい" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>ご希望日時</legend>
+            <p class="fieldset-note">日付ごとに、ご都合のよい開始時間をすべてチェックしてください。受付時間は9:00〜16:00です。</p>
+            <div class="date-request required-date">
+              <p>第1希望 <b>必須</b></p>
+              <div class="field"><label for="first-date">日にち</label><input id="first-date" name="first_date" type="date" required /></div>
+              <div class="time-picker" aria-labelledby="first-time-label">
+                <p id="first-time-label">ご希望の開始時間 <b>必須</b><span>複数選択可</span></p>
+                <div class="time-options" data-time-field="first_time"></div>
+              </div>
+            </div>
+            <div class="date-request">
+              <p>第2希望 <span>任意</span></p>
+              <div class="field"><label for="second-date">日にち</label><input id="second-date" name="second_date" type="date" /></div>
+              <div class="time-picker" aria-labelledby="second-time-label">
+                <p id="second-time-label">ご希望の開始時間 <span>複数選択可</span></p>
+                <div class="time-options" data-time-field="second_time"></div>
+              </div>
+            </div>
+            <div class="date-request">
+              <p>第3希望 <span>任意</span></p>
+              <div class="field"><label for="third-date">日にち</label><input id="third-date" name="third_date" type="date" /></div>
+              <div class="time-picker" aria-labelledby="third-time-label">
+                <p id="third-time-label">ご希望の開始時間 <span>複数選択可</span></p>
+                <div class="time-options" data-time-field="third_time"></div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>その他</legend>
+            <div class="field">
+              <label for="note">ご相談・連絡事項 <span>任意</span></label>
+              <textarea id="note" name="note" rows="4" placeholder="ご不明点やご要望があればご入力ください。"></textarea>
+            </div>
+          </fieldset>
+
+          <label class="agreement"><input id="agreement" type="checkbox" required /><span>入力内容を確認しました。予約はメールまたはLINEでのご連絡後に確定することを理解しました。<b>必須</b></span></label>
+          <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
+          <button id="submit-button" class="submit-button" type="submit">予約リクエストを送信する <span>→</span></button>
+          <p class="privacy-note">入力内容は、ご予約へのご連絡・確認の目的にのみ使用します。</p>
+        </form>
+
+        <aside class="booking-help"><strong>LINEでの返信をご希望の方へ</strong><span>事前にLien公式LINEの友だち追加をお願いします。</span><a href="https://lin.ee/UqJdcnx" target="_blank" rel="noopener noreferrer">LINEを友だち追加する</a></aside>
+      </section>
+    </main>
+
+    <footer>© Lien Total Beauty Salon</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script src="booking-config.js" defer></script>
+    <script src="booking.js" defer></script>
+  </body>
+</html>
