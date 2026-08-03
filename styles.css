@@ -44,4 +44,6 @@ h1,h2,h3,p { overflow-wrap:break-word; } h1 { margin:0; font-size:33px; font-wei
 @media (min-width:760px) { .hero-photo { background-size:100% 100%,1300px auto; } }
 @media (min-width:760px) { .access-grid { grid-template-columns:1.25fr 1fr; }.map-frame,.map-frame iframe { min-height:360px; }.access-info { display:flex; padding:35px 26px; flex-direction:column; justify-content:center; } }
 
+@media (max-width:759px) { .hero-photo { right:-96px; width:76%; opacity:.42; filter:brightness(1.12) saturate(.88); }.hero-content { z-index:2; padding:8px 12px 17px 0; background:linear-gradient(90deg,rgba(255,253,252,.98) 0%,rgba(255,253,252,.93) 59%,rgba(255,253,252,.38) 100%); }.hero-sub,.hero-text { color:#4f3b35; font-weight:500; }.hero h1 { color:#33231e; text-shadow:0 1px 0 rgba(255,255,255,.8); }.hero h1 em { color:#b94f62; }.hero-kicker,.hero-location { color:#b94f62; font-weight:500; } }
+
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; }.reveal { opacity:1; transform:none; transition:none; } }
