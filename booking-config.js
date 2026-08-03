@@ -5,5 +5,6 @@
 window.LIEN_BOOKING_CONFIG = {
   publicKey: "TrK3pUmrpWKwYTv3g",
   serviceId: "service_g5gmn7z",
-  templateId: "template_hmf8lfv"
+  templateId: "template_hmf8lfv",
+  contactTemplateId: ""
 };

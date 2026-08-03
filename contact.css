@@ -1,0 +1,10 @@
+@import url("booking.css");
+
+.contact-message-field { margin-top:16px; }
+
+.reply-options { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+.reply-options label { position:relative; display:grid; min-height:46px; place-items:center; cursor:pointer; }
+.reply-options input { position:absolute; opacity:0; }
+.reply-options span { display:grid; width:100%; min-height:46px; place-items:center; border:1px solid #dcc3bd; color:#765e56; background:#fff; font-size:13px; transition:background .16s ease,border-color .16s ease,color .16s ease; }
+.reply-options input:checked + span { border-color:var(--rose-dark); color:#fff; background:var(--rose-dark); }
+.reply-options input:focus-visible + span { outline:3px solid rgba(201,109,123,.25); outline-offset:2px; }

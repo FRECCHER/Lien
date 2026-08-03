@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lienへのお問い合わせフォームです。ご質問やご相談をお送りいただけます。" />
+    <meta name="theme-color" content="#fbf4f0" />
+    <title>お問い合わせ | Lien リアン</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <header class="booking-header">
+      <a class="booking-logo" href="index.html" aria-label="Lien トップページ">Lien<span>— リアン —</span></a>
+      <a class="back-link" href="index.html">サロンサイトへ戻る</a>
+    </header>
+
+    <main>
+      <section class="booking-hero" aria-labelledby="contact-title">
+        <p class="eyebrow">CONTACT</p>
+        <h1 id="contact-title">お問い合わせ</h1>
+        <p>ご質問やご相談は、こちらからお気軽にお送りください。<br />内容を確認後、メール・LINE・お電話にてご連絡します。</p>
+        <div class="notice" role="note"><strong>ご案内</strong><span>返信までに1〜2営業日いただく場合がございます。</span></div>
+      </section>
+
+      <section class="booking-panel" aria-label="お問い合わせフォーム">
+        <ol class="steps" aria-label="お問い合わせの流れ">
+          <li class="is-current"><span>1</span>入力</li>
+          <li><span>2</span>送信</li>
+          <li><span>3</span>ご返信</li>
+        </ol>
+
+        <form id="contact-form" novalidate>
+          <input class="honeypot" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <fieldset>
+            <legend>お客様情報</legend>
+            <p class="fieldset-note">LINEでの返信をご希望の場合は、LINEのお名前を正しくご入力ください。</p>
+            <div class="field-grid">
+              <div class="field field-wide">
+                <label for="contact-name">お名前 <b>必須</b></label>
+                <input id="contact-name" name="contact_name" type="text" autocomplete="name" required placeholder="例：山田 花子" />
+              </div>
+              <div class="field field-wide">
+                <label for="contact-line-name">LINEのお名前 <b>必須</b></label>
+                <input id="contact-line-name" name="contact_line_name" type="text" required placeholder="例：花子" />
+              </div>
+              <div class="field field-wide">
+                <label for="contact-email">メールアドレス <b>必須</b></label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="例：example@example.com" />
+                <small>受付確認やご返信に使用します。</small>
+              </div>
+              <div class="field field-wide">
+                <label for="contact-phone">お電話番号 <b>必須</b></label>
+                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="例：090-1234-5678" />
+                <small>LINEで連絡が取れない場合や、お急ぎのご連絡にのみ使用します。</small>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>お問い合わせ内容</legend>
+            <div class="field">
+              <label for="contact-kind">お問い合わせの種類 <b>必須</b></label>
+              <select id="contact-kind" name="contact_kind" required>
+                <option value="" selected disabled>選択してください</option>
+                <option value="ご予約について">ご予約について</option>
+                <option value="メニュー・料金について">メニュー・料金について</option>
+                <option value="施術について">施術について</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div class="field contact-message-field">
+              <label for="contact-message">内容 <b>必須</b></label>
+              <textarea id="contact-message" name="contact_message" rows="7" required placeholder="ご質問やご相談内容をご入力ください。"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>ご希望の返信方法</legend>
+            <p class="fieldset-note">LINEでの返信をご希望の方は、事前に公式LINEの友だち追加をお願いします。</p>
+            <div class="reply-options" role="radiogroup" aria-label="ご希望の返信方法">
+              <label><input type="radio" name="reply_method" value="メール" required /><span>メール</span></label>
+              <label><input type="radio" name="reply_method" value="LINE" required /><span>LINE</span></label>
+            </div>
+          </fieldset>
+
+          <label class="agreement"><input id="contact-agreement" type="checkbox" required /><span>入力内容を確認しました。ご返信のために氏名・メールアドレス・電話番号を使用することに同意します。<b>必須</b></span></label>
+          <p id="contact-form-message" class="form-message" role="status" aria-live="polite"></p>
+          <button id="contact-submit-button" class="submit-button" type="submit">お問い合わせを送信する <span>→</span></button>
+          <p class="privacy-note">入力内容は、お問い合わせへの返信・連絡の目的にのみ使用します。</p>
+        </form>
+
+        <aside class="booking-help"><strong>お急ぎの場合はLINEから</strong><span>LINE公式アカウントを友だち追加して、お問い合わせください。</span><a href="https://lin.ee/Yg7kKIv" target="_blank" rel="noopener noreferrer">LINEを友だち追加する</a></aside>
+      </section>
+    </main>
+
+    <footer>© Lien Total Beauty Salon</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    <script src="booking-config.js" defer></script>
+    <script src="contact.js" defer></script>
+  </body>
+</html>

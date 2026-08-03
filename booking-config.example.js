@@ -2,5 +2,6 @@
 window.LIEN_BOOKING_CONFIG = {
   publicKey: "YOUR_EMAILJS_PUBLIC_KEY",
   serviceId: "YOUR_EMAILJS_SERVICE_ID",
-  templateId: "YOUR_EMAILJS_TEMPLATE_ID"
+  templateId: "YOUR_EMAILJS_TEMPLATE_ID",
+  contactTemplateId: "YOUR_EMAILJS_CONTACT_TEMPLATE_ID"
 };
