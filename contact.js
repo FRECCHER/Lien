@@ -26,6 +26,10 @@
 
     const params = Object.fromEntries(new FormData(form).entries());
     params.requested_at = new Intl.DateTimeFormat("ja-JP", { dateStyle: "long", timeStyle: "short" }).format(new Date());
+    params.name = params.contact_name;
+    params.title = params.contact_kind;
+    params.time = params.requested_at;
+    params.message = `LINEのお名前：${params.contact_line_name} ｜ メールアドレス：${params.email} ｜ 電話番号：${params.phone} ｜ 希望の返信方法：${params.reply_method} ｜ お問い合わせ内容：${params.contact_message}`;
 
     submitButton.disabled = true;
     setMessage("送信しています…");
