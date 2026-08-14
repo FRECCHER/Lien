@@ -35,6 +35,39 @@
 .company-value h3 { margin:11px 0 9px; font-size:16px; font-weight:500; letter-spacing:.07em; line-height:1.6; }
 .company-value span { display:block; color:#6b554d; font-size:11px; letter-spacing:.045em; line-height:1.95; }
 
+.company-products { padding-top:77px; padding-bottom:77px; background:#fff; }
+.company-products-intro { max-width:690px; margin:0 auto 28px; text-align:center; }
+.company-products-intro p { margin:0 auto; color:#5c4841; font-size:13px; letter-spacing:.05em; line-height:2.08; }
+.company-store-link { display:inline-flex; min-height:46px; margin-top:21px; padding:0 18px; align-items:center; justify-content:center; gap:16px; color:var(--lavande); border:1px solid var(--lavande); font-size:12px; letter-spacing:.08em; text-decoration:none; transition:background .25s,color .25s,transform .25s; }
+.company-store-link:hover { color:#fff; background:var(--lavande); transform:translateY(-2px); }
+.company-store-link b { font-size:16px; font-weight:400; }
+.company-products-table-wrap { max-width:1000px; margin:auto; }
+.company-products-table { width:100%; border-spacing:0; border-collapse:collapse; border-top:1px solid var(--company-line); text-align:left; }
+.company-products-table caption { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
+.company-products-table th,.company-products-table td { padding:18px 13px; border-bottom:1px solid var(--company-line); vertical-align:top; }
+.company-products-table thead th { color:var(--lavande); font-size:11px; font-weight:500; letter-spacing:.1em; }
+.company-products-table tbody th { width:29%; color:var(--ink); font-family:var(--display); font-size:17px; font-weight:400; letter-spacing:.035em; line-height:1.5; }
+.company-products-table td { color:#5c4841; font-size:12px; letter-spacing:.035em; line-height:1.9; }
+.company-products-table td:nth-child(2) { width:20%; color:var(--lavande); font-size:13px; font-weight:500; letter-spacing:.06em; white-space:nowrap; }
+.company-products-table td span { display:inline-block; min-width:39px; margin-right:7px; color:#765e57; font-size:10px; font-weight:400; letter-spacing:.04em; }
+.company-products-note { margin:16px 0 0; color:#806c65; font-size:10px; letter-spacing:.035em; line-height:1.8; }
+.company-products-table tbody tr { transition:background .2s ease; }
+.company-products-table tbody tr:hover { background:rgba(210,10,103,.035); }
+.company-products-table .company-product-price b { color:var(--lavande); font-weight:500; letter-spacing:.07em; }
+
+@media (max-width:759px) {
+  .company-products-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
+  .company-products-table,.company-products-table tbody,.company-products-table tr,.company-products-table th,.company-products-table td { display:block; width:auto; }
+  .company-products-table { border-top:1px solid var(--company-line); }
+  .company-products-table tbody tr { padding:20px 0; border-bottom:1px solid var(--company-line); }
+  .company-products-table th,.company-products-table td { padding:0; border:0; }
+  .company-products-table tbody th { margin-bottom:14px; font-size:19px; }
+  .company-products-table td { margin-top:12px; font-size:12px; }
+  .company-products-table td::before { display:block; margin-bottom:3px; color:var(--lavande); font-size:10px; font-weight:500; letter-spacing:.1em; content:attr(data-label); }
+  .company-products-table td:nth-child(2) { width:auto; font-size:14px; }
+  .company-products-note { margin-top:14px; }
+}
+
 .company-salon { padding-top:74px; padding-bottom:76px; background:#fff; text-align:center; }
 .company-salon-inner { max-width:620px; margin:auto; }
 .company-salon h2 { margin-bottom:18px; }
@@ -68,7 +101,7 @@
   .company-hero h1 { font-size:40px; }
   .company-hero-copy>p:not(.company-wordmark):not(.company-kicker) { font-size:14px; }
   .company-heading h2,.company-thought h2,.company-salon h2,.company-access h2 { font-size:35px; }
-  .company-brand-story,.company-values,.company-profile { padding-top:110px; padding-bottom:110px; }
+  .company-brand-story,.company-values,.company-profile,.company-products { padding-top:110px; padding-bottom:110px; }
   .company-thought,.company-salon,.company-access { padding-top:104px; padding-bottom:108px; }
   .company-story-copy p { padding:21px 24px; font-size:14px; }
   .company-thought-inner { padding-left:38px; }
@@ -76,10 +109,15 @@
   .company-values-grid { grid-template-columns:repeat(5,1fr); }
   .company-value { min-height:235px; padding:25px 18px; border-right:1px solid var(--company-line); }
   .company-value:last-child { border-right:0; }
+  .company-products-intro { margin-bottom:34px; }
+  .company-products-intro p { font-size:14px; }
+  .company-products-table th,.company-products-table td { padding:22px 20px; }
+  .company-products-table thead th { font-size:12px; }
+  .company-products-table tbody th { font-size:19px; }
+  .company-products-table td { font-size:13px; }
+  .company-products-table td:nth-child(2) { font-size:14px; }
   .company-table div { padding:20px 28px; grid-template-columns:28% 1fr; }
   .company-table dt,.company-table dd { font-size:14px; }
 }
 
 @media (prefers-reduced-motion:reduce) { .company-button { transition:none; } }
-
-
